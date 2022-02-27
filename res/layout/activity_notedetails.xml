@@ -11,7 +11,7 @@
         android:id="@+id/toolbarofnotedetail"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#343434">
+        android:background="@color/teal_700">
 
 
         <TextView
@@ -22,7 +22,7 @@
             android:text="Title Displayed here"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="25sp"
+            android:textSize="23sp"
             android:textStyle="bold">
 
         </TextView>
@@ -37,7 +37,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbarofnotedetail"
         android:layout_marginTop="0dp"
-        android:background="#353839"
+        android:background="#2f4f4f"
         android:gravity="top|left"
         android:hint="Enter your note content here"
         android:padding="15sp"

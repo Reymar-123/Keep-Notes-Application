@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class register extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText editID, editUsername, editAddress, editEmail, editPassword;
+    private EditText editUsername, editAddress, editEmail, editPassword;
     private ProgressBar progressBar;
     private Button signupbutton;
 
@@ -39,7 +39,6 @@ public class register extends AppCompatActivity implements View.OnClickListener 
         signupbutton = (Button) findViewById(R.id.signupbutton);
         signupbutton.setOnClickListener(this);
 
-        editID = (EditText) findViewById(R.id.regidnumber);
         editUsername = (EditText) findViewById(R.id.regusername);
         editAddress = (EditText) findViewById(R.id.regaddress);
         editEmail = (EditText) findViewById(R.id.regemail);
@@ -62,28 +61,11 @@ public class register extends AppCompatActivity implements View.OnClickListener 
 
     private void signupbutton() {
 
-        String id = editID.getText().toString().trim();
+
         String name = editUsername.getText().toString().trim();
         String address = editAddress.getText().toString().trim();
         String email = editEmail.getText().toString().trim();
         String password = editPassword.getText().toString().trim();
-
-        if (id.isEmpty()){
-            editID.setError("ID Number are required.");
-            editID.requestFocus();
-            return;
-        }
-        if (id.length()>8){
-            editID.setError("ID Number are maximum of 8 digits.");
-            editID.requestFocus();
-            return;
-        }
-        if (id.length()<=7){
-            editID.setError("ID Number at least 8 digits.");
-            editID.requestFocus();
-            return;
-        }
-
 
         if (name.isEmpty()){
             editUsername.setError("Username is required.");
@@ -134,7 +116,7 @@ public class register extends AppCompatActivity implements View.OnClickListener 
 
                         if (task.isSuccessful()) {
 
-                            User user = new User(id, name, address, email);
+                            User user = new User(name, address, email);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

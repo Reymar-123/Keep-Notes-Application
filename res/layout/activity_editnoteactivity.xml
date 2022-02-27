@@ -10,7 +10,7 @@
         android:id="@+id/toolbarofeditnote"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#343434">
+        android:background="@color/teal_700">
 
 
         <EditText
@@ -35,7 +35,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbarofeditnote"
         android:layout_marginTop="0dp"
-        android:background="#353839"
+        android:background="#2f4f4f"
         android:gravity="top|left"
         android:padding="15sp"
         android:textColor="@color/white"
